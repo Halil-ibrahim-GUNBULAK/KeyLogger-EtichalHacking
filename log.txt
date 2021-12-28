@@ -1,0 +1,9 @@
+ 
+ --New Windows-- 
+ At window: KeyLoger-EtichalHacking [H:\KeyLoger-EtichalHacking] - ...\Keylogger.py - PyCharm 2021-12-28 20:56:06.596042- - -  
+'a''s''d''l''k''j''a''s''l''d''j''a''s''l''d''j''l''a''s''d''j''l''a''s''d''j''l''a''s''d''k'Key.enter'a''s''þ''l''d''k''l''þ''a''s''k''d''þ''a''s''d''k''l''þ''a''d''k''l''þ''a''s''d''k''a''s''l''k''d'Key.enter'a''l''s''k''j''d''l''a''j''s''d''a''j''d''l''a''þ''s''d''k''j''þ''a''l''s''d''j''k''þ''a''l''s''d''j'Key.enter 
+ At window: KeyLoger-EtichalHacking [H:\KeyLoger-EtichalHacking] - ...\Keylogger.py - PyCharm 2021-12-28 20:56:13.828795 
+ --New Windows-- 
+ At window: KeyLoger-EtichalHacking [H:\KeyLoger-EtichalHacking] - ...\Keylogger.py - PyCharm 2021-12-28 21:12:10.507053- - -  
+'s''d''a''s''d''a''s''d''a''s''d''j''k''a''s''d''k''a''s''h''d''j''a''j''s''d''a''l''s''d''j''k''a''l''d''j'Key.backspaceKey.backspaceKey.backspaceKey.backspaceKey.backspaceKey.backspaceKey.backspaceKey.backspaceKey.backspaceKey.backspaceKey.backspaceKey.backspaceKey.backspaceKey.backspaceKey.backspaceKey.backspaceKey.backspaceKey.backspaceKey.backspaceKey.backspaceKey.backspaceKey.backspaceKey.backspaceKey.backspaceKey.backspaceKey.backspaceKey.backspaceKey.backspaceKey.backspaceKey.backspaceKey.backspaceKey.backspaceKey.backspaceKey.backspaceKey.backspaceKey.backspace'a''s''l''k''d''j''l''a''s''d''j''a''l''s''d''j''l''a''s''j''d''l''a''s''d''j''a''s''k' 
+ At window: KeyLoger-EtichalHacking [H:\KeyLoger-EtichalHacking] - ...\Keylogger.py - PyCharm 2021-12-28 21:12:18.320784
